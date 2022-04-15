@@ -34,7 +34,10 @@ INSTALLED_APPS = [
 
     #User Apps
     'users.apps.UsersConfig', # user model - test for now
+    'pages.apps.PagesConfig', # this app is for static files? home.html location
 
+    #3rd Party
+    'crispy_forms', # Help with styling forms
 
     #System Apps
     'django.contrib.admin',
@@ -47,6 +50,11 @@ INSTALLED_APPS = [
 
 #Needed for user model
 AUTH_USER_MODEL = 'users.CustomUser'
+
+#where to go after login redirect:
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,3 +138,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#Using Bootstrap for styling
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# # newspaper_project/settings.py
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# method to send out emails to users:
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'JackGowan@protonmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+

@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#from django.views.generic.base import TemplateView #placeholder for home url?
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('', include('django.contrib.auth.urls')),  #This can give Login/Logout Views
     path('', include('pages.urls')), # home app
-    #path('', TemplateView.as_view(template_name='home.html'),name='home'), #Stock Template for Home
+    path('', include('plates.urls')),  # plates story app
+
 ]

@@ -1,0 +1,22 @@
+<!--want to use same header as base /-->
+ 
+{% extends 'base.html' %}
+
+ {% block content %}
+ 
+				<div class="mytable">
+			 
+			  <div class="myrow">
+				<p class="mycell"><a href="{% url 'plates:create_plates' %}" >Create New Story</a></p>
+				<p class="mycell"><a href="{% url 'plates:draft_plates_title_show' %}" >Join a Story </a></p>
+
+			 </div>
+				</div>
+
+	
+{% endblock %}
+
+
+
+
+	

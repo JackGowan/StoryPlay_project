@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     #User Apps
     'users.apps.UsersConfig', # user model - test for now
     'pages.apps.PagesConfig', # this app is for static files? home.html location
+    'plates.apps.PlatesConfig',
 
     #3rd Party
     'crispy_forms', # Help with styling forms
